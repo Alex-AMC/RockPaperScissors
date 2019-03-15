@@ -88,8 +88,7 @@ header>h2{
 }
 
 .choice:hover{
-    cursor: pointer;
-    background: rgba(165, 12, 12, 0.678); 
+    cursor: pointer; 
 }
 
 #action-message{
@@ -97,4 +96,21 @@ header>h2{
     color: white; 
     font-weight: bold; 
     font-size: 20px; 
+}
+
+.green-glow{
+    border: 4px solid green;   
+    background-color: rgba(0, 253, 34, 0.432);
+    box-shadow: 0 0 10px darkgreen; 
+}
+
+.red-glow{
+    border: 4px solid red; 
+    background-color: rgba(253, 0, 0, 0.432);
+    box-shadow: 0 0 10px darkred; 
+}
+
+.grey-glow{
+    border: 4px solid gainsboro; 
+    box-shadow: 0 0 10px gray; 
 }

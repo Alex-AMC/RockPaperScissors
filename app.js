@@ -11,22 +11,46 @@ const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 
 
+function charConverter(letter){
+    /*
+    Converts from a character to a word. 
+    */
+    switch (letter){
+        case "r":
+            return "Rock".fontcolor("red");
+        case "p":
+            return "Paper".fontcolor("red");
+        case "s":
+            return "Scissors".fontcolor("red");
+    }
+}
+
 function wins(userChoice,computerChoice){
     console.log("User Wins!");
+    const userChoice_div = document.getElementById(userChoice); 
     userScore++; 
     userScore_span.innerHTML = userScore;
-    result_p.innerHTML = userChoice + " beats" + computerChoice + ". Human Wins!"
-    
+    result_p.innerHTML = `${charConverter(userChoice)} beats ${charConverter(computerChoice)}. Human Wins!`
+    userChoice_div.classList.add('green-glow');
+    setTimeout(function(){userChoice_div.classList.remove('green-glow')}, 300);
 }
 
 function lose(userChoice,computerChoice){
     console.log("User Loses!");
-    compScore++;
-    compScore_span.innerHTML = compScore;  
+    const userChoice_div = document.getElementById(userChoice); 
+    compScore++; 
+    compScore_span.innerHTML = compScore;
+    result_p.innerHTML = `${charConverter(userChoice)} loses to ${charConverter(computerChoice)}. Computer Wins!` 
+    userChoice_div.classList.add('red-glow');
+    setTimeout(function(){userChoice_div.classList.remove('red-glow')}, 300);
 }
 
 function draw(userChoice,computerChoice){
     console.log("Draw!")
+    const userChoice_div = document.getElementById(userChoice); 
+    result_p.innerHTML = `${charConverter(userChoice)} does nothing to ${charConverter(computerChoice)}. DRAW!`
+    userChoice_div.classList.add('grey-glow');
+    setTimeout(function(){userChoice_div.classList.remove('grey-glow')}, 300);
 }
 
 function getCompChoice(){
